@@ -1,0 +1,21 @@
+<div style = 'margin-top: 40p;'>
+  <li>
+    <span class="content"><h4><%= @entry.title %></h4></span>
+    <span class="content"><%= @entry.body %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(@entry.created_at) %> ago.
+    </span>
+  </li>
+</div>
+<div>
+  <% if @entry.comments.any? %>
+    <h2>Comments (<%= @entry.comments.count %>)</h2>
+    <ol class="entries">
+      <%= render @comments %>
+    </ol>
+    <%= will_paginate @comments %>
+  <% end %>
+  <div>
+  <%= render 'shared/comment_form' %>
+</div>
+</div>

@@ -1,0 +1,9 @@
+<li>
+  <span class="content">
+  	<font color = "blue"><%= comment.name %></font> : 
+    <%= comment.comment %>
+  </span>
+  <span class="timestamp">
+    commented <%= time_ago_in_words(@entry.created_at) %> ago.
+  </span>
+</li>
